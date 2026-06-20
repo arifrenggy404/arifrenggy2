@@ -21,7 +21,7 @@
     </div>
 
     <!-- Tabs Header -->
-    <div style="display:flex; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; gap: 1.5rem;">
+    <div class="tabs-header">
         <button class="tab-btn active" onclick="switchTab('deskripsi')">Deskripsi</button>
         <button class="tab-btn" onclick="switchTab('arsitektur')">Arsitektur</button>
         <button class="tab-btn" onclick="switchTab('kode')">Cuplikan Kode</button>
