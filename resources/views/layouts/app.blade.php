@@ -16,7 +16,10 @@
     <div class="container">
         <header>
             <div class="logo">
-                <a href="{{ route('home') }}" class="logo-link">AR</a>
+                <a href="{{ route('home') }}" class="logo-link" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                    <img src="/images/logo.jpg" alt="Logo" style="height: 40px; width: 40px; border-radius: 10px; border: 1px solid var(--border); object-fit: cover;">
+                    <span style="font-weight: 800; font-size: 1.25rem; letter-spacing: -0.5px; background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Arif Renggy</span>
+                </a>
             </div>
             <nav>
                 <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Beranda</a>
