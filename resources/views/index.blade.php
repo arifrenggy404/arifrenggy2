@@ -67,8 +67,21 @@
                         <a href="{{ route('projects.show', $project->slug) }}" style="color:var(--text-primary); font-weight:700; font-size:1.05rem; text-decoration:none; display:block;">
                             {{ $project->title }}
                         </a>
-                        <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.45rem; line-height: 1.5;">{{ $project->summary }}</p>
                         
+                        @if($project->tags)
+                            <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:0.4rem; margin-bottom: 0.5rem;">
+                                @foreach($project->tags as $tag)
+                                    <span class="skill-tag" style="font-size:0.65rem; padding:0.15rem 0.5rem; margin:0;">{{ $tag }}</span>
+                                @endforeach
+                            </div>
+                        @endif
+
+                        <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.25rem; line-height: 1.5;">{{ $project->summary }}</p>
+                        
+                        @if($project->image_path)
+                            <img src="{{ $project->image_path }}" alt="{{ $project->title }}" style="width: 100%; height: 110px; object-fit: cover; border-radius: 8px; margin-top: 0.75rem; border: 1px solid var(--border);">
+                        @endif
+
                         <div style="display:flex; gap: 1rem; margin-top: 0.85rem; align-items: center; flex-wrap: wrap;">
                             <a href="{{ route('projects.show', $project->slug) }}" style="color:var(--accent-solid); text-decoration:none; font-weight:600; font-size:0.85rem; display: inline-flex; align-items: center; gap: 0.25rem;">Detail &rarr;</a>
                             @if($project->github_url)

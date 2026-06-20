@@ -57,6 +57,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'github_url' => 'https://github.com/arifrenggy404/arifrenggy2',
                 'demo_url' => 'https://d4a8-208-77-246-8.ngrok-free.app',
+                'image_path' => '/images/project_portfolio.jpg',
+                'tags' => ['Laravel', 'Filament', 'SQLite', 'CSS3', 'Alpine.js'],
                 'order' => 1
             ]
         );

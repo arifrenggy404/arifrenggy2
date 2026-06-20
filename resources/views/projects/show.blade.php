@@ -9,7 +9,20 @@
 
 <div class="bento-card" style="padding: 2.5rem;">
     <h1 style="font-size: 2.25rem; font-weight:800; margin-bottom: 0.5rem; letter-spacing: -0.5px;">{{ $project->title }}</h1>
+    
+    @if($project->tags)
+        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem;">
+            @foreach($project->tags as $tag)
+                <span class="skill-tag" style="font-size:0.75rem; padding:0.25rem 0.75rem; margin:0;">{{ $tag }}</span>
+            @endforeach
+        </div>
+    @endif
+
     <p style="color:var(--text-secondary); font-size:1.1rem; margin-bottom: 1.5rem;">{{ $project->summary }}</p>
+
+    @if($project->image_path)
+        <img src="{{ $project->image_path }}" alt="{{ $project->title }}" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 20px; margin-bottom: 2rem; border: 1px solid var(--border);">
+    @endif
 
     <div style="display:flex; gap: 0.75rem; margin-bottom: 2.5rem;">
         @if($project->github_url)
