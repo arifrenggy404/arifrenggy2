@@ -26,12 +26,13 @@ class DatabaseSeeder extends Seeder
         Profile::updateOrCreate(
             ['id' => 1],
             [
-                'tagline' => 'IT Student & Fullstack Developer',
-                'bio' => 'Saya adalah mahasiswa IT dengan minat mendalam pada Laravel, backend development, dan desain website minimalis elegan.',
+                'tagline' => 'IT Student & Aspiring Fullstack Developer',
+                'bio' => 'Saya adalah mahasiswa IT di Unkriswina Sumba (Universitas Kristen Wira Wacana Sumba) yang bercita-cita menjadi seorang Fullstack Developer profesional.',
                 'socials' => [
-                    'github' => 'https://github.com',
-                    'linkedin' => 'https://linkedin.com',
-                    'email' => 'arif@example.com'
+                    'github' => 'https://github.com/arifrenggy404',
+                    'facebook' => 'https://facebook.com/arifrenggy00',
+                    'instagram' => 'https://instagram.com/arifrenggy',
+                    'whatsapp' => 'https://wa.me/6285122531230'
                 ]
             ]
         );
