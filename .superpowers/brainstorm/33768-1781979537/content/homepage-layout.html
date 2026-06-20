@@ -1,0 +1,157 @@
+<style>
+  /* Custom overrides for elegant minimalist feel */
+  :root {
+    --accent: #6366f1; /* Indigo */
+    --accent-hover: #4f46e5;
+  }
+  .visual-preview {
+    background: #0f172a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    border: 1px solid #1e293b;
+    line-height: 1.4;
+  }
+  .layout-mockup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 1rem;
+    height: 140px;
+    justify-content: space-between;
+    border: 1px solid #1e293b;
+  }
+  .bento-mockup {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1.2fr;
+    gap: 6px;
+    height: 100%;
+  }
+  .bento-box {
+    background: #1e293b;
+    border-radius: 4px;
+    border: 1px solid #334155;
+  }
+  
+  .editorial-mockup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+  .editorial-line {
+    background: #1e293b;
+    height: 6px;
+    border-radius: 3px;
+  }
+  
+  .split-mockup {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+  }
+  .split-left {
+    flex: 1;
+    background: #1e293b;
+    border-radius: 4px;
+  }
+  .split-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .split-item {
+    background: #334155;
+    height: 25px;
+    border-radius: 4px;
+  }
+</style>
+
+<h2>Pilih Layout Halaman Utama (Beranda)</h2>
+<p class="subtitle">Desain minimalis modern untuk portofolio multi-page Anda. Pilih tata letak yang paling menarik bagi Anda:</p>
+
+<div class="cards">
+  <div class="card" data-choice="bento" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="width: 100%; height: 100%; padding: 1rem;">
+        <div class="layout-mockup">
+          <div class="bento-mockup">
+            <div class="bento-box" style="grid-column: span 2; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: #38bdf8; font-weight: bold;">Arif Renggy</div>
+            <div class="bento-box"></div>
+            <div class="bento-box" style="background: #334155;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>1. Bento Grid Modern</h3>
+      <p>Tata letak kotak-kotak interaktif yang dinamis. Sangat modern, terorganisir, dan cocok untuk menampilkan data singkat seperti status, proyek unggulan, dan keahlian.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="editorial" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="width: 100%; height: 100%; padding: 1rem;">
+        <div class="layout-mockup">
+          <div class="editorial-mockup">
+            <div class="editorial-line" style="width: 60%; height: 8px; background: #38bdf8;"></div>
+            <div class="editorial-line" style="width: 80%;"></div>
+            <div class="editorial-line" style="width: 40%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>2. Editorial & Typographic</h3>
+      <p>Mengutamakan tipografi besar, elegan, dan ruang kosong (whitespace) yang bersih. Memberikan kesan berkelas, eksklusif, dan fokus penuh pada teks narasi perkenalan diri.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="split" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="width: 100%; height: 100%; padding: 1rem;">
+        <div class="layout-mockup">
+          <div class="split-mockup">
+            <div class="split-left" style="display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: #38bdf8; text-align: center;">Profil (Fixed)</div>
+            <div class="split-right">
+              <div class="split-item"></div>
+              <div class="split-item"></div>
+              <div class="split-item"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>3. Split Screen</h3>
+      <p>Halaman terbagi dua: sisi kiri tetap (fixed) berisi foto profil & bio singkat, sisi kanan dapat di-scroll untuk melihat daftar proyek terbaru atau ringkasan keahlian. Sangat praktis.</p>
+    </div>
+  </div>
+</div>
+
+<div class="pros-cons">
+  <div class="pros">
+    <h4>Kelebihan Bento & Split</h4>
+    <ul>
+      <li>Desain Bento terasa sangat modern dan interaktif.</li>
+      <li>Split screen memudahkan navigasi cepat tanpa berpindah pandangan.</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h4>Kelebihan Editorial</h4>
+    <ul>
+      <li>Fokus pada cerita diri dan profesionalisme tinggi.</li>
+      <li>Tampilan lebih klasik, rapi, dan mudah dibaca.</li>
+    </ul>
+  </div>
+</div>

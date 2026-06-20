@@ -1,0 +1,189 @@
+<style>
+  :root {
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+  }
+  .visual-preview {
+    background: #0f172a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    border: 1px solid #1e293b;
+    line-height: 1.4;
+  }
+  .layout-mockup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 1rem;
+    height: 140px;
+    justify-content: space-between;
+    border: 1px solid #1e293b;
+  }
+  .minimal-mockup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    justify-content: center;
+  }
+  .line-bold {
+    background: #38bdf8;
+    height: 10px;
+    border-radius: 5px;
+    width: 50%;
+  }
+  .line-thin {
+    background: #475569;
+    height: 6px;
+    border-radius: 3px;
+    width: 80%;
+  }
+  
+  .case-mockup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    height: 100%;
+    align-items: center;
+  }
+  .case-box {
+    background: #1e293b;
+    border-radius: 4px;
+    height: 100%;
+    border: 1px solid #334155;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .interactive-mockup {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .mock-header-tabs {
+    background: #1e293b;
+    height: 20px;
+    display: flex;
+    gap: 4px;
+    padding: 3px 6px;
+    border-bottom: 1px solid #334155;
+  }
+  .mock-tab {
+    background: #334155;
+    width: 25px;
+    height: 100%;
+    border-radius: 2px;
+  }
+  .mock-tab.active {
+    background: #38bdf8;
+  }
+  .mock-body {
+    flex: 1;
+    background: #0f172a;
+    padding: 6px;
+  }
+</style>
+
+<h2>Pilih Layout Halaman Detail Proyek</h2>
+<p class="subtitle">Sebagai mahasiswa IT, detail proyek yang terstruktur sangat penting bagi rekruter untuk melihat cara berpikir logis Anda. Pilih gaya halaman detail yang Anda sukai:</p>
+
+<div class="cards">
+  <div class="card" data-choice="minimal" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="width: 100%; height: 100%; padding: 1rem;">
+        <div class="layout-mockup">
+          <div class="minimal-mockup">
+            <div class="line-bold"></div>
+            <div class="line-thin"></div>
+            <div class="line-thin" style="width: 90%;"></div>
+            <div style="display: flex; gap: 8px; margin-top: 4px;">
+              <span class="mock-button" style="padding: 2px 8px; font-size: 0.6rem;">GitHub</span>
+              <span class="mock-button" style="padding: 2px 8px; font-size: 0.6rem; background: #475569;">Demo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>1. Minimalist Quick-View</h3>
+      <p>Halaman ringkas yang langsung menampilkan deskripsi singkat proyek, daftar teknologi (tech stack), serta tautan ke repositori GitHub dan demo live. Cepat dibaca dan to-the-point.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="case-study" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="width: 100%; height: 100%; padding: 1rem;">
+        <div class="layout-mockup">
+          <div class="case-mockup">
+            <div class="case-box">
+              <div class="line-bold" style="width: 80%; height: 6px;"></div>
+              <div class="line-thin" style="width: 100%; height: 4px;"></div>
+              <div class="line-thin" style="width: 90%; height: 4px;"></div>
+            </div>
+            <div class="case-box" style="background: #0f172a; border-style: dashed;">
+              <div class="line-bold" style="width: 60%; height: 6px; background: #a855f7;"></div>
+              <div class="line-thin" style="width: 100%; height: 4px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>2. Structured Case Study</h3>
+      <p>Layout bergaya profesional dengan pembagian sub-bab: <strong>Masalah (The Challenge)</strong>, <strong>Solusi (The Solution)</strong>, <strong>Arsitektur</strong>, dan <strong>Key Takeaways</strong>. Sangat disukai rekruter perusahaan besar.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="interactive" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="width: 100%; height: 100%; padding: 1rem;">
+        <div class="layout-mockup">
+          <div class="interactive-mockup">
+            <div class="mock-header-tabs">
+              <div class="mock-tab active"></div>
+              <div class="mock-tab"></div>
+              <div class="mock-tab"></div>
+            </div>
+            <div class="mock-body">
+              <div class="line-bold" style="width: 40%; height: 6px; margin-bottom: 6px;"></div>
+              <div class="line-thin" style="width: 85%; height: 4px; margin-bottom: 4px;"></div>
+              <div class="line-thin" style="width: 70%; height: 4px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>3. Tabbed Showcase</h3>
+      <p>Menampilkan info proyek dalam format tab interaktif (Tab 1: Deskripsi, Tab 2: Arsitektur/Database, Tab 3: Kode/Snippet). Hemat ruang dan interaktif untuk dieksplorasi.</p>
+    </div>
+  </div>
+</div>
+
+<div class="pros-cons">
+  <div class="pros">
+    <h4>Kelebihan Case Study</h4>
+    <ul>
+      <li>Menunjukkan kemampuan penyelesaian masalah yang mendalam.</li>
+      <li>Kesan akademis & profesional yang sangat kuat.</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h4>Kelebihan Minimalist & Tabbed</h4>
+    <ul>
+      <li>Lebih cepat dibuat dan mudah dibaca secara kilat.</li>
+      <li>Tata letak tab memberikan interaksi yang modern & unik.</li>
+    </ul>
+  </div>
+</div>
