@@ -55,6 +55,8 @@ class DatabaseSeeder extends Seeder
                 'arch_content' => '<p>Arsitektur menggunakan Laravel Blade, SQLite, dan Alpine.js untuk performa maksimal.</p>',
                 'code_content' => '<pre><code>public function index() {\n    return view("home");\n}</code></pre>',
                 'is_featured' => true,
+                'github_url' => 'https://github.com/arifrenggy404/arifrenggy2',
+                'demo_url' => 'https://d4a8-208-77-246-8.ngrok-free.app',
                 'order' => 1
             ]
         );
