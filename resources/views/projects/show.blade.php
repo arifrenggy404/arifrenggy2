@@ -21,7 +21,7 @@
     <p style="color:var(--text-secondary); font-size:1.1rem; margin-bottom: 1.5rem;">{{ $project->summary }}</p>
 
     @if($project->image_path)
-        <img src="{{ $project->image_path }}" alt="{{ $project->title }}" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 20px; margin-bottom: 2rem; border: 1px solid var(--border);">
+        <img src="{{ \Illuminate\Support\Str::startsWith($project->image_path, ['http', '/']) ? $project->image_path : '/storage/' . $project->image_path }}" alt="{{ $project->title }}" onerror="this.style.display='none';" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 20px; margin-bottom: 2rem; border: 1px solid var(--border);">
     @endif
 
     <div style="display:flex; gap: 0.75rem; margin-bottom: 2.5rem;">

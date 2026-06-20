@@ -79,7 +79,7 @@
                         <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.25rem; line-height: 1.5;">{{ $project->summary }}</p>
                         
                         @if($project->image_path)
-                            <img src="{{ $project->image_path }}" alt="{{ $project->title }}" style="width: 100%; height: 110px; object-fit: cover; border-radius: 8px; margin-top: 0.75rem; border: 1px solid var(--border);">
+                            <img src="{{ \Illuminate\Support\Str::startsWith($project->image_path, ['http', '/']) ? $project->image_path : '/storage/' . $project->image_path }}" alt="{{ $project->title }}" onerror="this.style.display='none';" style="width: 100%; height: 110px; object-fit: cover; border-radius: 8px; margin-top: 0.75rem; border: 1px solid var(--border);">
                         @endif
 
                         <div style="display:flex; gap: 1rem; margin-top: 0.85rem; align-items: center; flex-wrap: wrap;">

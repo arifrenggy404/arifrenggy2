@@ -7,7 +7,17 @@
     @forelse($projects as $project)
         <div class="bento-card" style="border-top: 4px solid var(--accent-solid);">
             <div>
+                @if($project->image_path)
+                    <img src="{{ \Illuminate\Support\Str::startsWith($project->image_path, ['http', '/']) ? $project->image_path : '/storage/' . $project->image_path }}" alt="{{ $project->title }}" onerror="this.style.display='none';" style="width: 100%; height: 160px; object-fit: cover; border-radius: 16px; margin-bottom: 1rem; border: 1px solid var(--border);">
+                @endif
                 <h2 style="font-size:1.25rem; font-weight:700; letter-spacing:-0.3px; color: var(--text-primary);">{{ $project->title }}</h2>
+                @if($project->tags)
+                    <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:0.4rem; margin-bottom: 0.75rem;">
+                        @foreach($project->tags as $tag)
+                            <span class="skill-tag" style="font-size:0.65rem; padding:0.15rem 0.5rem; margin:0;">{{ $tag }}</span>
+                        @endforeach
+                    </div>
+                @endif
                 <p style="margin-top: 0.75rem; color:var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem;">{{ $project->summary }}</p>
             </div>
             <div style="display:flex; flex-wrap:wrap; gap: 0.5rem; justify-content: flex-start; align-items:center; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: auto;">
