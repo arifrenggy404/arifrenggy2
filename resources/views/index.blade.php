@@ -104,9 +104,6 @@
                 </a>
             </div>
         </div>
-        <div style="margin-top: 1rem;">
-            <a href="{{ route('contact') }}" class="btn btn-secondary" style="width:100%; margin-top:0.5rem; text-align: center;">Kirim Pesan Langsung</a>
-        </div>
     </div>
 </div>
 @endsection
