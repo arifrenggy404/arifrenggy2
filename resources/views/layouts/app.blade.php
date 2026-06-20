@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arif Renggy - Portofolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="/css/style.css">
     <script>
         // Inline script to prevent flash of light theme
         const savedTheme = localStorage.getItem('theme') || 'dark';

@@ -10,7 +10,7 @@
         </div>
         <div>
             @if(!empty($profile->resume_path))
-                <a href="{{ asset('storage/' . $profile->resume_path) }}" class="btn" download>Unduh CV</a>
+                <a href="/storage/{{ $profile->resume_path }}" class="btn" download>Unduh CV</a>
             @endif
         </div>
     </div>
