@@ -4,7 +4,7 @@
 FROM composer:2.7 AS composer_builder
 WORKDIR /app
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-interaction --no-scripts --no-autoloader --prefer-dist
+RUN composer install --no-dev --no-interaction --no-scripts --no-autoloader --prefer-dist --ignore-platform-reqs
 
 # ==========================================
 # Stage 2: Frontend Build (Node)
@@ -19,7 +19,7 @@ RUN npm run build
 # ==========================================
 # Stage 3: PHP Runtime (PHP-FPM + Nginx)
 # ==========================================
-FROM php:8.3-fpm-alpine
+FROM php:8.4-fpm-alpine
 WORKDIR /var/www/html
 
 # Install system dependencies
@@ -75,7 +75,7 @@ COPY --from=composer_builder --chown=www-data:www-data /app/vendor ./vendor
 COPY --from=node_builder --chown=www-data:www-data /app/public/build ./public/build
 
 # Dump Composer Autoload (optimized)
-RUN composer dump-autoload --no-dev --optimize
+RUN composer dump-autoload --no-dev --optimize --ignore-platform-reqs
 
 # Setup directory permissions
 RUN chmod -R 775 storage bootstrap/cache \
