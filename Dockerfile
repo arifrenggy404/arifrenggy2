@@ -58,6 +58,20 @@ RUN { \
         echo 'opcache.enable_cli=1'; \
     } > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
+# Configure PHP-FPM to listen on a UNIX socket instead of TCP port 9000
+RUN { \
+        echo '[global]'; \
+        echo 'daemonize = no'; \
+        echo '[www]'; \
+        echo 'listen = /var/run/php-fpm.sock'; \
+        echo 'listen.owner = www-data'; \
+        echo 'listen.group = www-data'; \
+        echo 'listen.mode = 0660'; \
+    } > /usr/local/etc/php-fpm.d/zz-docker.conf
+
+# Configure Nginx to run as www-data to match PHP-FPM and avoid socket/file permission issues
+RUN sed -i 's/user nginx;/user www-data;/g' /etc/nginx/nginx.conf
+
 # Copy Nginx, Supervisord, and PHP configurations
 COPY docker/nginx.conf /etc/nginx/http.d/default.conf
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
