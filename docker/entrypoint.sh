@@ -33,5 +33,8 @@ fi
 # Ensure correct permissions for storage, bootstrap cache, and database
 chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache "$(dirname "$DB_PATH")" "$DB_PATH"
 
+# Ensure supervisor log directory exists
+mkdir -p /var/log/supervisor
+
 echo "Starting services..."
 exec supervisord -c /etc/supervisor/conf.d/supervisord.conf
