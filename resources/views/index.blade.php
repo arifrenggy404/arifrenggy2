@@ -33,7 +33,11 @@
             </p>
         </div>
         <div style="margin-top: 1.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); border-top: 1px solid var(--border); padding-top: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-            <span>🏫</span> <span>Unkriswina Sumba</span>
+            <svg style="width: 16px; height: 16px; color: var(--accent-solid); fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+            </svg>
+            <span>Unkriswina Sumba</span>
         </div>
     </div>
 
