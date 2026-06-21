@@ -63,7 +63,7 @@ RUN { \
         echo '[global]'; \
         echo 'daemonize = no'; \
         echo '[www]'; \
-        echo 'listen = /var/run/php-fpm.sock'; \
+        echo 'listen = /tmp/php-fpm.sock'; \
         echo 'listen.owner = www-data'; \
         echo 'listen.group = www-data'; \
         echo 'listen.mode = 0660'; \
@@ -71,6 +71,10 @@ RUN { \
 
 # Configure Nginx to run as www-data to match PHP-FPM and avoid socket/file permission issues
 RUN sed -i 's/user nginx;/user www-data;/g' /etc/nginx/nginx.conf
+
+# Redirect Nginx logs to stdout and stderr for container logs observability
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Copy Nginx, Supervisord, and PHP configurations
 COPY docker/nginx.conf /etc/nginx/http.d/default.conf
