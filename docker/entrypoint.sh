@@ -36,5 +36,10 @@ chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache "
 # Ensure supervisor log directory exists
 mkdir -p /var/log/supervisor
 
+# Substitute Nginx port with Railway's dynamic PORT env variable (default to 80 if not set)
+PORT_TO_USE="${PORT:-80}"
+echo "Configuring Nginx to listen on port ${PORT_TO_USE}..."
+sed -i "s/%PORT%/${PORT_TO_USE}/g" /etc/nginx/http.d/default.conf
+
 echo "Starting services..."
 exec supervisord -c /etc/supervisor/conf.d/supervisord.conf
